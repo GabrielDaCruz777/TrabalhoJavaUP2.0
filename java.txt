@@ -1,0 +1,55 @@
+EX 1 
+
+import java.util.Scanner;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Bem-vindo à Calculadora!");
+
+        System.out.print("Escolha uma operação (+, -, *, /): ");
+        String operacao = scanner.nextLine();
+
+        System.out.print("Digite o primeiro número: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Digite o segundo número: ");
+        double num2 = scanner.nextDouble();
+
+        double resultado = 0;
+
+        switch (operacao) {
+            case "+-":
+                resultado = num1 + num2;
+                break;
+            case "-":
+                resultado = num1 - num2;
+                break;
+            case "*":
+                resultado = num1 * num2;
+                break;
+            case "/":
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                } else {
+                    System.out.println("Erro: Não é possível dividir por zero.");
+                    return; // Termina o programa se houver erro na divisão
+                }
+                break;
+            default:
+                System.out.println("Operação inválida! Use +, -, * ou /.");
+                return;
+        }
+
+        System.out.println("O resultado é: " + resultado);
+
+        scanner.close();
+    }
+}
+
+
+EX2
+
+
